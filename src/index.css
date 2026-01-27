@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Abrahams & Co Lead Lab Design System */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -155,7 +156,7 @@
   }
   
   .animate-marquee {
-    animation: marquee 15s linear infinite;
+    animation: marquee 10s linear infinite;
   }
   
   /* Fade In */
@@ -176,13 +177,56 @@
     animation: fadeIn 0.8s ease-out 0.5s forwards;
     opacity: 0;
   }
+
+  /* Fade Up (for staggered lists) */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+.before-in-view {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.service-item span:first-child {
+  transition-delay: 0.2s;
+}
+
 }
 
 /* Grid Layout for Main Section */
 .main-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, minmax(280px, 1fr));
+  /* grid-template-rows: repeat(2, minmax(480px, 1fr)); */
+  grid-template-rows: minmax(480px, 1fr) minmax(600px, 1fr);
   gap: 0;
   width: 100%;
 }
@@ -190,7 +234,7 @@
 @media (max-width: 1024px) {
   .main-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, minmax(250px, 1fr));
+    grid-template-rows: repeat(3, minmax(450px, 1fr));
   }
 }
 
@@ -216,5 +260,5 @@
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, hsla(14, 48%, 45%, 0.85) 0%, hsla(14, 55%, 35%, 0.9) 100%);
+  background: linear-gradient(135deg, hsla(15, 20%, 68%, 0.85) 0%, hsla(14, 55%, 35%, 0.9) 100%);
 }
