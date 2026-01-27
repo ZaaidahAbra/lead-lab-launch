@@ -2,7 +2,7 @@ import houseKey from "@/assets/house-key.png";
 
 const GridItem6 = () => {
   return (
-    <div className="relative min-h-[280px] overflow-hidden">
+    <div className="relative min-h-[280px] sm:min-h-[320px] overflow-hidden">
       <img 
         src={houseKey}
         alt="Real estate keys and tools" 
