@@ -1,5 +1,4 @@
-
-## Lead Lab 
+### Lead Lab 
 A coming soon Page for an upcoming lead generation agency.[ This project was made with the help of loveable to showcasing AI prompt generation]
 
 ## How can I edit this code?
